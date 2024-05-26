@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Eliminar propiedad</h2>
+<p>¿Estás seguro de que deseas eliminar "{{ property.description }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Eliminar" class="btn btn-danger">
+    <a href="{% url 'property_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

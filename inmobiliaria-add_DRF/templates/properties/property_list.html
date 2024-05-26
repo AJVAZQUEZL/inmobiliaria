@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lista de propiedades</h2>
+<form method="post" action="{% url 'create_property' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Guardar" class="btn btn-primary">
+</form>
+<hr>
+{% for property in properties %}
+<div class="property-item">
+    <p>{{ property.id }} - {{ property.description }}</p>
+    <a href="{% url 'update_property' property.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+    <form method="post" action="{% url 'delete_property' property.id %}" style="display:inline;">
+        {% csrf_token %}
+        <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger">
+    </form>
+</div>
+{% endfor %}
+{% endblock %}
+
