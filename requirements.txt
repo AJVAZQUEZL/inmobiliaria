@@ -24,6 +24,6 @@ six
 sqlparse
 typing-extensions
 tzdata
-vine==5.0.0
-wcwidth==0.2.5
-xlrd==2.0.1
+vine
+wcwidth
+xlrd
