@@ -27,3 +27,4 @@ tzdata
 vine
 wcwidth
 xlrd
+django-extensions
